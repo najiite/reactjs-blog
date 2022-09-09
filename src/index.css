@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-family: 'josefin'
   }
     .t-btn {
       @apply rounded-lg text-slate-50 px-8 py-2 font-bold hover:shadow-2xl hover:scale-110

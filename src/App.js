@@ -13,7 +13,7 @@ function App() {
   return (
     
     <Router>
-    <div className="mx-auto bg-gray-100">
+    <div className="mx-auto bg-slate-100">
       <Header />
       <Routes>
         <Route path='/' element={<Home />}></Route>
