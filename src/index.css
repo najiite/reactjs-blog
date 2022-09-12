@@ -6,8 +6,17 @@
   html {
     font-family: 'josefin'
   }
-    .t-btn {
-      @apply rounded-lg text-slate-50 px-8 py-2 font-bold hover:shadow-2xl hover:scale-110
-    }
+
+  .t-btn {
+    @apply rounded-lg text-slate-50 px-8 py-2 font-bold hover:shadow-2xl hover:scale-110
+  }
+
+  h4 {
+    @apply my-3 font-semibold text-xl
+  }
+
+  p {
+    @apply my-3 text-lg
+  }
 
   }

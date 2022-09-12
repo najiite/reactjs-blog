@@ -13,12 +13,14 @@ function App() {
   return (
     
     <Router>
-    <div className="mx-auto bg-slate-100">
+    <div className="mx-auto bg-slate-100 font-josefin">
       <Header />
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='about' element={<About />}></Route>
-        <Route path='post' element={<Post />}></Route>
+        <Route path='post' element={<Post />}>
+          <Route path=":slug" element={<Post />} />
+        </Route>
         
       </Routes>
       <Footer />

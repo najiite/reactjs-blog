@@ -5,7 +5,7 @@ const SidebarPosts = ({title, posts}) => {
     <div className="mt-5">
         <h3 className="font-semibold mb-5">{title}</h3>
         { posts.map((post) => (
-            <SingleSidebarPost key={post.id} post={post} />
+            <SingleSidebarPost key={post._id} post={post} />
           ))}
     </div>
   )
