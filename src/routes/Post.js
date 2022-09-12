@@ -1,7 +1,7 @@
 import Archive from "../components/Archive"
 import ScrolltoTop from "../components/ScrolltoTop"
 //import SidebarPosts from "../components/SidebarPosts"
-import {FaThumbsUp,FaThumbsDown, FaEye} from 'react-icons/fa'
+import {FaThumbsUp,FaThumbsDown} from 'react-icons/fa'
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react"
 import sanityClient from "../SanityClient"
@@ -41,10 +41,9 @@ const Post = () => {
 			.then((data) => setPost(data))
 			.catch(console.error);
 	}, [params.slug]);
-  console.log(post)
   if (post === null)
     return(
-      <>Loading..</>
+      <><img className="motion-safe:animate-[spin_2s_linear_infinite]" src='/images/loading.png' alt='loading' /></>
     )
   return (
     
