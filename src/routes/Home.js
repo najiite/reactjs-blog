@@ -10,6 +10,7 @@ import { useState, useEffect } from "react"
 import sanityClient from "../SanityClient"
 
 const Home = () => {
+  document.title = 'Ai Blog'
   const [posts, setPosts] = useState([])
   useEffect(() => {
 		sanityClient

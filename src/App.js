@@ -12,8 +12,7 @@ import Footer from "./components/Footer"
 import { useMode } from "./ModeContext";
 
 function App() {
-  const {mode,bg,text} = useMode()
-  console.log(mode)
+  const {bg,text} = useMode()
   return (
     <div className={`mx-auto  ${bg} font-josefin ${text}`}>
     <Router>

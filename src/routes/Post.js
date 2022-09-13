@@ -7,13 +7,12 @@ import { useState, useEffect } from "react"
 import sanityClient from "../SanityClient"
 import {PortableText} from '@portabletext/react'
 import {toTimestring} from '../functions'
-import { useMode } from "../ModeContext";
 
 const Post = () => {
-  const {mode} = useMode()
-  console.log(mode)
   let params = useParams()
   const [post, setPost]  = useState(null)
+  const [title, setTitle] = useState('')
+  
   useEffect(() => {
 		sanityClient
 			.fetch(
@@ -41,9 +40,10 @@ const Post = () => {
           },
         }`
 			)
-			.then((data) => setPost(data))
+			.then((data) => {setPost(data); setTitle(data.title)})
 			.catch(console.error);
 	}, [params.slug]);
+  document.title = title
   if (post === null)
     return(
       <><img className="motion-safe:animate-[spin_2s_linear_infinite]" src='/images/loading.png' alt='loading' /></>
