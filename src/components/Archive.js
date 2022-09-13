@@ -1,8 +1,8 @@
 
 const Archive = () => {
   return (
-    <div>
-        <h3 className="font-semibold mb-5">Archive</h3>
+    <div className=" pb-4 border-b border-slate-300">
+        <h3 className="font-semibold mb-5 ">Archive</h3>
             <ul className="underline">
               <li><a href="/">September 2022 (34)</a></li>
               <li><a href="/">August 2022 (14)</a></li>

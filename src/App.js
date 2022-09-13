@@ -9,11 +9,14 @@ import Post from "./routes/Post";
 import Header from "./components/Header";
 import Footer from "./components/Footer"
 
+import { useMode } from "./ModeContext";
+
 function App() {
+  const {mode,bg,text} = useMode()
+  console.log(mode)
   return (
-    
+    <div className={`mx-auto  ${bg} font-josefin ${text}`}>
     <Router>
-    <div className="mx-auto bg-slate-100 font-josefin">
       <Header />
       <Routes>
         <Route path='/' element={<Home />}></Route>
@@ -25,8 +28,8 @@ function App() {
       </Routes>
       <Footer />
       
-    </div>
   </Router>
+    </div>
   );
 }
 

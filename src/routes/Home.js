@@ -45,21 +45,20 @@ const Home = () => {
   return (
     <div>
       <Featured />
-        <h3 className="text-4xl mx-5 lg:mx-10 text-gray-800">Latest Posts</h3>
+        <h3 className="text-4xl mx-5 lg:mx-10">Latest Posts</h3>
       <div className="lg:flex lg:flex-row">
-        <div className="lg:basis-3/4 grid md:grid-cols-2 gap-10 m-5 lg:m-10">
-          { posts.map((post) => (
-            <Post key={post._id} post={post} />
-          ))}
-        <ScrolltoTop />
-
-        </div>
+          <div className="lg:basis-3/4 grid md:grid-cols-2 gap-10 m-5 lg:m-10">
+            
+              { posts.map((post) => (
+                <Post key={post._id} post={post} />
+              ))}
+          </div>
 
         <div className="lg:basis-1/4 m-5 lg:my-10" >
             <Archive />
             <SidebarPosts title='Popular Posts' posts={posts} />
         </div>
-      </div>
+      </div><ScrolltoTop />
     </div>
   )
 }

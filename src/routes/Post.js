@@ -7,8 +7,11 @@ import { useState, useEffect } from "react"
 import sanityClient from "../SanityClient"
 import {PortableText} from '@portabletext/react'
 import {toTimestring} from '../functions'
+import { useMode } from "../ModeContext";
 
 const Post = () => {
+  const {mode} = useMode()
+  console.log(mode)
   let params = useParams()
   const [post, setPost]  = useState(null)
   useEffect(() => {
@@ -50,15 +53,15 @@ const Post = () => {
     <div>
       <div className="lg:flex lg:flex-row">
         <div className="lg:basis-3/4 m-5 lg:m-10">
-          
+          <div className="text-4xl font-semibold m-3">{post.title}</div>
           <img className="rounded-lg" src={post.mainImage.asset.url} alt={post.title} />
-          <div className="text-2xl font-semibold m-3 mt-5 hover:text-yellow-500">{post.title}</div>
           <div className="flex justify-between">
             <div className="flex items-center mt-5  mb-5">
                 <img className="w-10 h-10 rounded-full m-5 hover:scale-150" src={post.author.image.asset.url} alt='profile' />
                 <div className="">
                     <strong>{post.author.name}</strong>
-                    <p className="text-slate-700 font-semibold">{toTimestring(post._createdAt)}</p>
+                    <br></br>
+                    <span className="opacity-60 font-semibold">{toTimestring(post._createdAt)}</span>
                 </div>
             </div>
             <div className="flex items-center mt-5  mb-5 md:text-2xl">
