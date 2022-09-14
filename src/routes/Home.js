@@ -3,7 +3,6 @@ import Archive from "../components/Archive"
 import Featured from "../components/Featured"
 import Post from "../components/Post"
 import ScrolltoTop from "../components/ScrolltoTop"
-import SidebarPosts from "../components/SidebarPosts"
 //components import end
 
 import { useState, useEffect } from "react"
@@ -57,7 +56,6 @@ const Home = () => {
 
         <div className="lg:basis-1/4 m-5 lg:my-10" >
             <Archive />
-            <SidebarPosts title='Popular Posts' posts={posts} />
         </div>
       </div><ScrolltoTop />
     </div>

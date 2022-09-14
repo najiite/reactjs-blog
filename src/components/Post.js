@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 const Post = ({post}) => {
   const {border} = useMode()
   return (
-    <div className={`border ${border} rounded-lg hover:scale-110`}>
+    <div className={`border ${border} rounded-lg`}>
             <Link to={`/post/${post.slug.current}`}>
               <img className="rounded-lg " src={post.mainImage.asset.url} alt={post.title}/>
               <div className="text-2xl font-semibold m-3 mt-5 hover:text-yellow-500">{post.title}</div>
