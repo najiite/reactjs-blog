@@ -40,7 +40,7 @@ const Featured = () => {
 	}, []);
   if (post === null)
     return(
-      <><img className="motion-safe:animate-[spin_2s_linear_infinite]" src='/images/loading.png' alt='loading' /></>
+      <></>
     )
   return (
       <>

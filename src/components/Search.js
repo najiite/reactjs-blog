@@ -1,9 +1,13 @@
 import { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import sanityClient from "../SanityClient";
+import { useMode } from "../ModeContext";
+import Loading from "./Loading";
 const Search = ({searchterm}) => {
     
+    const {bg} = useMode()
     const [searchresults, setSearchresults] = useState(null)
+    const [loading, setLoading] = useState(true)
     useEffect(() => {
         sanityClient
             .fetch(
@@ -13,7 +17,7 @@ const Search = ({searchterm}) => {
             slug,
             }`
                 )
-                .then((data) => {setSearchresults(data)})
+                .then((data) => {setSearchresults(data); setLoading(false)})
                 .catch(console.error)
             
     }, [searchterm])
@@ -23,7 +27,9 @@ const Search = ({searchterm}) => {
     )
   return (
     <>
-     <div className={`m-5`}>
+    { loading ? (<Loading />):
+    (
+      <div className={`absolute px-5 lg:px-10 ${bg} w-full`}>
         { searchterm.length > 1 ? (<h4>Search results for "{searchterm}"</h4>): (<></>) }
         
         { searchresults.length === 0 && searchterm.length > 1 ? (<p>No results for "{searchterm}"</p>): (<></>) }
@@ -34,6 +40,8 @@ const Search = ({searchterm}) => {
               ))}
         </ul>
       </div>
+      ) }
+     
     </>
   )
 }
